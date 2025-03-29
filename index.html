@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Formulário de Login -->
+        <div id="loginSection">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <label for="loginUsername">Usuário:</label><br>
+                <input type="text" id="loginUsername" name="loginUsername" required><br><br>
+                <label for="loginPassword">Senha:</label><br>
+                <input type="password" id="loginPassword" name="loginPassword" required><br><br>
+                <button type="submit">Entrar</button>
+            </form>
+            <p id="loginMessage"></p>
+            <p>Não tem conta? <a href="#" id="showRegister">Cadastre-se</a></p>
+        </div>
+
+        <!-- Formulário de Cadastro -->
+        <div id="registerSection" style="display: none;">
+            <h1>Cadastro</h1>
+            <form id="registerForm">
+                <label for="registerUsername">Usuário:</label><br>
+                <input type="text" id="registerUsername" name="registerUsername" required><br><br>
+                <label for="registerPassword">Senha:</label><br>
+                <input type="password" id="registerPassword" name="registerPassword" required><br><br>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <p id="registerMessage"></p>
+            <p>Já tem conta? <a href="#" id="showLogin">Fazer Login</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

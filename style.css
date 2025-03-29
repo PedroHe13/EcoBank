@@ -1,0 +1,88 @@
+body {
+    font-family: 'Avenir', 'Helvetica', sans-serif; /* Tipografia moderna */
+    background-color: #F5F5E8; /* Bege claro ecológico */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    margin: 40px auto; /* Centralizado */
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(138, 138, 127, 0.2); /* Sombra com cinza terroso */
+    position: relative;
+}
+
+/* Logotipo ecológico */
+.container::before {
+    content: "🌿 EcoBank";
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #465C47; /* Verde escuro */
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h1 {
+    color: #465C47; /* Verde escuro */
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center; /* Centralizado */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #465C47; /* Verde escuro */
+    font-weight: 500;
+}
+
+input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #A9CBA4; /* Verde claro */
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #F5F5E8; /* Bege claro */
+}
+
+button {
+    padding: 12px;
+    background-color: #A9CBA4; /* Verde claro */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #698474; /* Verde médio */
+}
+
+p {
+    margin-top: 15px;
+    color: #465C47; /* Verde escuro */
+    text-align: center; /* Centralizado */
+}
+
+a {
+    color: #698474; /* Verde médio */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

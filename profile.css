@@ -1,0 +1,309 @@
+body {
+    font-family: 'Avenir', 'Helvetica', sans-serif;
+    background-color: #F5F5E8;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(138, 138, 127, 0.2);
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+.profile-container::before {
+    content: "🌿 EcoBank";
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #465C47;
+    position: absolute;
+    top: -50px;
+    left: 30px;
+}
+
+.main-content {
+    flex: 2;
+}
+
+.ads-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #F5F5E8;
+    border-radius: 8px;
+}
+
+.ads-section h2 {
+    color: #465C47;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.ad {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(138, 138, 127, 0.1);
+}
+
+.ad h3 {
+    color: #465C47;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.ad p {
+    color: #465C47;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.ad button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background-color: #A9CBA4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ad button:hover {
+    background-color: #698474;
+    transform: scale(1.05);
+}
+
+h1 {
+    color: #465C47;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.profile-info img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-info p {
+    font-size: 1.1em;
+    color: #465C47;
+    margin: 5px 0;
+}
+
+.balance-section, .investments-section, .operations-section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #F5F5E8;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #465C47;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#toggleCurrency {
+    background-color: #A9CBA4;
+    padding: 8px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    display: block;
+    width: fit-content;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#toggleCurrency:hover {
+    background-color: #698474;
+    transform: scale(1.05);
+}
+
+#balance {
+    font-size: 1.8em;
+    color: #698474;
+    margin: 10px 0;
+    transition: opacity 0.3s ease;
+}
+
+.operations-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #A9CBA4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #698474;
+    transform: scale(1.05);
+}
+
+#toggleBalance {
+    background-color: #8A8A7F;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#toggleBalance:hover {
+    background-color: #698474;
+    transform: scale(1.05);
+}
+
+#logout {
+    background-color: #A9CBA4;
+    margin-top: 20px;
+}
+
+#logout:hover {
+    background-color: #698474;
+}
+
+#investmentList {
+    list-style: none;
+    padding: 0;
+}
+
+#investmentList li {
+    padding: 15px;
+    border-bottom: 1px solid #A9CBA4;
+    color: #465C47;
+    font-size: 1.1em;
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
+}
+
+:not(.hidden) {
+    opacity: 1;
+}
+
+.form-hidden {
+    opacity: 0;
+    visibility: hidden; /* Substitui display: none para permitir transições */
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* Delay no visibility */
+}
+
+#investmentForm {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F5F5E8;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilo dos Modais */
+#operationModal, #adModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    pointer-events: none; /* Impede interação quando escondido */
+}
+
+#operationModal:not(.form-hidden), #adModal:not(.form-hidden) {
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: auto; /* Permite interação quando visível */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#operationModal:not(.form-hidden) .modal-content,
+#adModal:not(.form-hidden) .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content h3 {
+    color: #465C47;
+    margin-bottom: 15px;
+}
+
+.modal-content h4 {
+    color: #465C47;
+    margin: 15px 0 10px;
+}
+
+.modal-content p {
+    color: #465C47;
+    margin-bottom: 20px;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-content li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-content input {
+    padding: 8px;
+    border: 1px solid #A9CBA4;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.modal-content button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}

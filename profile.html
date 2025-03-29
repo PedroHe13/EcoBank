@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - EcoBank</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="main-content">
+            <h1 id="greeting"></h1>
+            <div class="profile-info">
+                <img id="profilePic" src="https://via.placeholder.com/150" alt="Foto de Perfil">
+                <div>
+                    <p><strong>Usuário:</strong> <span id="usernameDisplay"></span></p>
+                    <p><strong>Bio:</strong> Bem-vindo ao meu perfil!</p>
+                </div>
+            </div>
+
+            <!-- Saldo e Botão de Câmbio -->
+            <div class="balance-section">
+                <button id="toggleCurrency">Conta Internacional (USD)</button>
+                <h2>Saldo</h2>
+                <p id="balance" data-value-brl="7500000000" data-value-usd="1500000000">R$ 7.500.000.000,00</p>
+                <button id="toggleBalance">Ocultar Saldo</button>
+            </div>
+
+            <!-- Opções de Operações -->
+            <div class="operations-section">
+                <h2>Operações</h2>
+                <div class="operations-buttons">
+                    <button id="stockMarket">Bolsa de Valores</button>
+                    <button id="buyShares">Comprar Cotas</button>
+                    <button id="giftCards">Gift Cards</button>
+                    <button id="currencyExchange">Trocar Real por Dólar</button>
+                </div>
+            </div>
+
+            <!-- Investimentos -->
+            <div class="investments-section">
+                <h2>Investimentos</h2>
+                <ul id="investmentList">
+                    <li data-currency="BRL">Ações Tech - R$ 2.300.000.000,00</li>
+                    <li data-currency="BRL">Imóveis de Luxo - R$ 1.800.000.000,00</li>
+                    <li data-currency="BRL">Fundo de Criptomoedas - R$ 3.400.000.000,00</li>
+                    <li data-currency="USD" class="hidden">Tech Stocks - US$ 500.000.000,00</li>
+                    <li data-currency="USD" class="hidden">Real Estate - US$ 600.000.000,00</li>
+                </ul>
+                <button id="showInvestmentForm">Adicionar Investimento</button>
+            </div>
+
+            <!-- Formulário de Investimento -->
+            <div id="investmentForm" class="form-hidden">
+                <h3>Novo Investimento</h3>
+                <form id="newInvestmentForm">
+                    <label for="investmentName">Nome do Investimento:</label><br>
+                    <input type="text" id="investmentName" required><br><br>
+                    <label for="investmentValue">Valor:</label><br>
+                    <input type="number" id="investmentValue" step="0.01" required><br><br>
+                    <button type="submit">Cadastrar</button>
+                    <button type="button" id="cancelInvestment">Cancelar</button>
+                </form>
+            </div>
+
+            <!-- Botão de Logout -->
+            <button id="logout">Sair</button>
+        </div>
+
+        <!-- Seção de Anúncios -->
+        <div class="ads-section">
+            <h2>Novidades</h2>
+            <div class="ad">
+                <h3>🌱 Fundo Verde</h3>
+                <p>Invista em projetos sustentáveis com retorno de até 12% ao ano!</p>
+                <button class="learn-more">Saiba Mais</button>
+            </div>
+            <div class="ad">
+                <h3>💧 Eco-Crédito</h3>
+                <p>Financie sua casa ecológica com taxas reduzidas.</p>
+                <button class="learn-more">Saiba Mais</button>
+            </div>
+            <div class="ad">
+                <h3>🌍 Viagem Sustentável</h3>
+                <p>Compre pacotes de viagem com cashback em Gift Cards!</p>
+                <button class="learn-more">Saiba Mais</button>
+            </div>
+        </div>
+
+        <!-- Modal de Operações -->
+        <div id="operationModal" class="form-hidden">
+            <div class="modal-content">
+                <h3 id="operationModalTitle"></h3>
+                <div id="operationModalContent"></div>
+                <button onclick="closeModal('operationModal')">Fechar</button>
+            </div>
+        </div>
+
+        <!-- Modal de Anúncios -->
+        <div id="adModal" class="form-hidden">
+            <div class="modal-content">
+                <h3 id="adModalTitle"></h3>
+                <div id="adModalContent"></div>
+                <button onclick="closeModal('adModal')">Fechar</button>
+            </div>
+        </div>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>
